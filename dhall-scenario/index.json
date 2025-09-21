@@ -10,7 +10,8 @@
       {
         "title": "JSON, more like NO!",
         "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "verify": "step1/verify.sh",
+        "background": "step1/background.sh"
       },
       {
         "title": "Secret!",
@@ -18,14 +19,6 @@
         "background": "step2/background.sh"
       }
     ],
-    "assets": {
-      "host01": [
-        {
-          "file": "info.json",
-          "target": "~/"
-        }
-      ]
-    },
     "finish": {
       "text": "finish.md"
     }

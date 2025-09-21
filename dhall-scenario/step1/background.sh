@@ -1,4 +1,4 @@
-FILE="secret.txt"
+FILE="info.json"
 
 GITHUB_URL="${GITHUB_PATH}${FILE}"
 
