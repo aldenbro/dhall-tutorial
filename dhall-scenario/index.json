@@ -12,7 +12,7 @@
         "text": "step1/text.md",
         "assets": {
           "client": [
-            { "file": "assets/info.json", "target": "~/" }
+            { "file": "info.json", "target": "~/" }
           ]
         }
       }
