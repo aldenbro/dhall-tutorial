@@ -9,14 +9,15 @@
     "steps": [
       {
         "title": "JSON, more like NO!",
-        "text": "step1/text.md",
-        "assets": {
-          "host01": [
-            { "file": "info.json", "target": "~/" }
-          ]
-        }
+        "text": "step1/text.md"
+        
       }
     ],
+    "assets": {
+      "host01": [
+        { "file": "info.json", "target": "~/" }
+      ]
+    },
     "finish": {
       "text": "finish.md"
     }
