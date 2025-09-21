@@ -1,9 +1,3 @@
-`info.json` is a JSON file that records teachers, TAs and students for the DevOps course.
-For each person, we have a given name, role and email.
-The roles can be "Teacher", "TA" or "Student".
-The emails are school emails, and always formatted as `<name>@mail.com`.
-
-```json
 [
     {
         "name": "Larissa",
@@ -31,5 +25,3 @@ The emails are school emails, and always formatted as `<name>@mail.com`.
         "email": "herdi@mail.com"
     }
 ]
-```
-Please add another user to the record.
