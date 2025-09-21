@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GITHUB_URL="${GITHUB_PATH}correct_info.json"
+FILE="correct_info.json"
+GITHUB_URL="https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads/main/dhall-scenario/assets/${FILE}"
 LOCAL_FILE="/root/info.json"
 TMP_EXPECTED="$(mktemp)"
 
