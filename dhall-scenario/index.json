@@ -16,6 +16,12 @@
     "assets": {
       "host01": [
         { "file": "info.json", "target": "~/" }
+      ],
+      "client": [
+        { "file": "visible.json", "target": "~/" }
+      ],
+      "host": [
+        { "file": "hidden.json", "target": "~/" }
       ]
     },
     "finish": {
