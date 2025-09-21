@@ -1,1 +1,1 @@
-stat hidden.txt
+json-to-dhall 'List { name : Text, role : < Teacher | TA | Student >, email : Text }' < info.json
