@@ -9,7 +9,12 @@
     "steps": [
       {
         "title": "JSON, more like NO!",
-        "text": "step1/text.md"
+        "text": "step1/text.md",
+        "assets": {
+          "client": [
+            { "file": "assets/info.json", "target": "~/" }
+          ]
+        }
       }
     ],
     "finish": {
