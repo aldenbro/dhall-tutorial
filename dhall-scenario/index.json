@@ -9,8 +9,8 @@
     "steps": [
       {
         "title": "JSON, more like NO!",
-        "text": "step1/text.md"
-        
+        "text": "step1/text.md",
+        "verify": "verify.sh"
       }
     ],
     "assets": {
@@ -18,10 +18,10 @@
         { "file": "info.json", "target": "~/" }
       ],
       "client": [
-        { "file": "visible.json", "target": "~/" }
+        { "file": "visible.txt", "target": "~/" }
       ],
       "host": [
-        { "file": "hidden.json", "target": "~/" }
+        { "file": "hidden.txt", "target": "~/" }
       ]
     },
     "finish": {
