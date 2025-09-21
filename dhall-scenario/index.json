@@ -11,7 +11,7 @@
         "title": "JSON, more like NO!",
         "text": "step1/text.md",
         "assets": {
-          "client": [
+          "host01": [
             { "file": "info.json", "target": "~/" }
           ]
         }
