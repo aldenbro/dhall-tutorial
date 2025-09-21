@@ -1,6 +1,7 @@
 [
     {
         "name": "Larissa",
+        "pullRequestsMade": 5,
         "role": "Teacher"
     },
     {
@@ -11,7 +12,7 @@
     {
         "name": "Sofia",
         "pullRequestsMade": 3,
-        "role": "Outside Resource"
+        "role": "TA"
     },
     {
         "name": "David",
@@ -20,7 +21,7 @@
     },
     {
         "name": "Herdi",
-        "pullRequestsMade": -1,
+        "pullRequestsMade": 1,
         "role": "Student"
     }
 ]
