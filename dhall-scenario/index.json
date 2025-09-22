@@ -14,7 +14,7 @@
         "background": "step1/background.sh"
       },
       {
-        "title": "Secret!",
+        "title": "Introducing Dhall",
         "text": "step2/text.md",
         "background": "step2/background.sh"
       }
