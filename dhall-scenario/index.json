@@ -1,6 +1,6 @@
 {
-  "title": "Dhall for All",
-  "description": "Let's learn how to use Dhall.",
+  "title": "Dhall for All: A Dhall tutorial",
+  "description": "Learn how to use Dhall, and know what it is good for.",
   "details": {
     "intro": {
       "text": "intro.md",
