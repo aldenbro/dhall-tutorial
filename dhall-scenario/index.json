@@ -15,8 +15,7 @@
       },
       {
         "title": "Introducing Dhall",
-        "text": "step2/text.md",
-        "background": "step2/background.sh"
+        "text": "step2/text.md"
       },
       {
         "title": "Functions in Dhall",
