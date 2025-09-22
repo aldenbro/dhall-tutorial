@@ -1,3 +1,1 @@
-Let's learn how to use Dhall!
-
-Hope you are ready!
+Please wait for the environment to finish setting up.

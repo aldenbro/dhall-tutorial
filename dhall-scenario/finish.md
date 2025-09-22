@@ -1,1 +1,1 @@
-Good job, you are now a Dhall expert!
+Good job, you have finished the tutorial!
