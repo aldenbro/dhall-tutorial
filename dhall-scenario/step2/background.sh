@@ -2,6 +2,6 @@ GITHUB_PATH=https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads
 
 cd /root
 
-wget "${GITHUB_URL}User.dhall"
-wget "${GITHUB_URL}Schema.dhall"
-curl -L "${GITHUB_URL}info.json" -o "incorrect_info.json"
+wget "${GITHUB_PATH}User.dhall"
+wget "${GITHUB_PATH}Schema.dhall"
+curl -L "${GITHUB_PATH}info.json" -o "incorrect_info.json"
