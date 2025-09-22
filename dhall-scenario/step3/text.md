@@ -39,8 +39,12 @@ To remember the correct values you can look back at your corrected JSON file:
 
 This is all well and good, we can create configuration files that have some kind of static check to ensure type correctness. But the systems you use might not support Dhall, it might only support the aforementioned JSON.
 
-However, Dhall comes with a tool that can be used to translate from Dhall, to JSON. Thus we can have type safety in our JSON files, by outsourcing their generation to Dhall. Running the following command will generate the same JSON as seen in `info.json`:
+However, Dhall comes with a tool that can be used to translate from Dhall to JSON. Thus we can have type safety in our JSON files, by outsourcing their generation to Dhall. Running the following command will generate the same JSON as seen in `info.json` using `info.dhall`:
 
-`dhall-to-json --file dhall.info`{{exec}}
+`dhall-to-json --file info.dhall`{{exec}}
+
+Alternatively you can run the following command to get a syntax highlighted version of the input:
+
+`dhall-to-json --file info.dhall | batcat -l json`{{exec}}
 
 You are able to proceed to the next step if you have successfully fixed `info.dhall`.

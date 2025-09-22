@@ -20,6 +20,7 @@
       {
         "title": "Functions in Dhall",
         "text": "step3/text.md",
+        "verify": "step3/verify.sh",
         "background": "step3/background.sh"
       }
     ],

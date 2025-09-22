@@ -1,5 +1,7 @@
 let User = ./User.dhall
 
+let Role = < Teacher | TA | Student >
+
 let makeUser
     : Text -> Natural -> Role -> User
     = \(name : Text) ->
