@@ -26,13 +26,13 @@ Dhall is a typed language, which means you can specify the structure of a given 
 
 You have been given the file `Schema.dhall`,
 
-`cat Schema.dhall`{{exec}}
+`batcat -l haskell Schema.dhall`{{exec}}
 
  which specifies the intended structure of the JSON file, which is that the JSON file should be a list of users. Moreover, a user is supposed to be a record that has three fields, a name consisting of text, the number of pull requests made represented as a natural number (0,1,2,...), and finally a role which can be one of three options: Teacher, TA, or Student.
 
 Inspecting `User.dhall`
 
-`cat User.dhall`{{exec}}
+`batcat -l haskell User.dhall`{{exec}}
 
  we can find that we have made the definition of a user explicit with three distinctive types, `Text`, `Natural`, and `<  Teacher | TA | Student >`, which is a special type called a union type. You can use this schema when converting to Dhall.
 

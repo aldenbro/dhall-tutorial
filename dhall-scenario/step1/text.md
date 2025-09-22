@@ -1,35 +1,8 @@
 Before stepping into Dhall, let's first interact with a more common configuration language, namely JSON.
 
-We have been given a file `info.json` which contains info regarding the DevOps course. 
+We have been given a file `info.json` which contains info regarding the DevOps course. You can view the file by running
 
-```json
-[
-    {
-        "name": "Larissa",
-        "role": "Teacher"
-    },
-    {
-        "name": "Eric",
-        "pullRequestsMade": 4,
-        "role": "TA"
-    },
-    {
-        "name": "Sofia",
-        "pullRequestsMade": 3,
-        "role": "Outside Resource"
-    },
-    {
-        "name": "David",
-        "pullRequestsMade": 2,
-        "role": "Student"
-    },
-    {
-        "name": "Herdi",
-        "pullRequestsMade": -1,
-        "role": "Student"
-    }
-]
-```
+`batcat info.json`{{exec}}
 
 Unfortunately, the person making the file was very tired, and so some errors slipped in. Three errors have been identified: 
 
