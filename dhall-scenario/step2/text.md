@@ -32,12 +32,12 @@ You have been given the file `Schema.dhall`,
 
 Inspecting `User.dhall`
 
-`cat Schema.dhall`{{exec}}
+`cat User.dhall`{{exec}}
 
  we can find that we have made the definition of a user explicit with three distinctive types, `Text`, `Natural`, and `<  Teacher | TA | Student >`, which is a special type called a union type. You can use this schema when converting to Dhall.
 
 `json-to-dhall ./Schema.dhall --file info.json`{{exec}}
 
-One thing to note is that if you supply the program with a schema and a JSON file that does not follow the schema, the program will produce an error. This means you are guaranteed to have a schema abiding input if the program completes. It also means you can catch schema errors in you JSON files, such as the ones in Step 1. You can see this by running
+One thing to note is that if you supply the program with a schema and a JSON file that does not follow the schema, the program will produce an error. This means you are guaranteed to have a schema abiding input if the program completes. It also means you can catch schema errors in your JSON files, such as the ones in Step 1. You can see this by running
 
 `json-to-dhall ./Schema.dhall --file incorrect_info.json`{{exec}}
