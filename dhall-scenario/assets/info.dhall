@@ -7,10 +7,10 @@ let makeUser
       \(role : Role) ->
         { name, pullRequestsMade, role }
 
-in    [ makeUser "Larissa" 5 Role.Teacher
+in    [ makeUser "Larissa" None Role.Teacher
       , makeUser "Eric" 4 Role.TA
-      , makeUser "Sofia" 3 Role.TA
+      , makeUser "Sofia" 3 Role.Outside_Resource
       , makeUser "David" 2 Role.Student
-      -- Add the final student here to complete the record
+      , makeUser "Herdi" -1 Role.Student
       ]
     : List User
