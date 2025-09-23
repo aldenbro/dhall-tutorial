@@ -14,7 +14,7 @@
         "background": "step1/background.sh"
       },
       {
-        "title": "Introducing Dhall",
+        "title": "Introducing Dhall and types",
         "text": "step2/text.md"
       },
       {

@@ -2,42 +2,43 @@ You probably found it somewhat tedious to fix the mistakes in the JSON file, and
 
 Dhall is supposed to be a better way to write configuration files, alleviating some of the issues you encountered in the previous step.
 
-This is how `info.json` would have looked like if it was a Dhall file instead:
+This is how a small Dhall file looks like, without using any fancy features:
 
-```c
-[ { name = "Larissa", pullRequestsMade = 5, role = "Teacher" }
-, { name = "Eric", pullRequestsMade = 4, role = "TA" }
-, { name = "Sofia", pullRequestsMade = 3, role = "TA" }
-, { name = "David", pullRequestsMade = 2, role = "Student" }
-, { name = "Herdi", pullRequestsMade = 1, role = "Student" }
-]
+```haskell
+{ age = 42, name = "Bob", weight = 13.37 }
 ```
 
-However, how the Dhall representation would look like is not that important, as it does not highlight the strengths of the language, which presents itself as other features.
+It is pretty similar to how a corresponding JSON file would look like.
 
-## Translation
-Dhall has several translation tools which means you can convert to/from Dhall with other configuration languages, such as the aforementioned JSON. You can for example run the following code to get the Dhall output above:
-
-`json-to-dhall --file info.json`{{exec}}
+However, how the Dhall file looks like is not that important, as it does not highlight the strengths of the language, which presents itself as other features.
 
 ## Typing
 
 Dhall is a typed language, which means you can specify the structure of a given record as a type, and any record given that type will be forced to abide by it.
 
-You have been given the file `Schema.dhall`,
+For the aforementioned example, this would look something like the following:
 
-`batcat -l haskell Schema.dhall`{{exec}}
+```haskell
+let Entity = { age : Natural, name : Text, weight : Double }
 
- which specifies the intended structure of the JSON file, which is that the JSON file should be a list of users. Moreover, a user is supposed to be a record that has three fields, a name consisting of text, the number of pull requests made represented as a natural number (0,1,2,...), and finally a role which can be one of three options: Teacher, TA, or Student.
+in  { age = 42, name = "Bob", weight = 13.37 } : Entity
+```
 
-Inspecting `User.dhall`
+If you would have given a negative number as the age, or an integer as the weight, Dhall would complain when you would try to evaluate the expression. This helps catch simple mistakes, such as the ones found in Step 1, without looking for them manually. In this aspect Dhall is a much more safe language to use for your configuration files.
 
-`batcat -l haskell User.dhall`{{exec}}
+Dhall has a couple of primitive types which can be used, these are:
+- `Bool`
+- `Natural` (a non-negative number)
+- `Integer`
+- `Double`
+- `Text`
+- `Date` / `Time` / `TimeZone`
+- `Bytes`
 
- we can find that we have made the definition of a user explicit with three distinctive types, `Text`, `Natural`, and `<  Teacher | TA | Student >`, which is a special type called a union type. You can use this schema when converting to Dhall.
+Beyond that, Dhall also has some built-in composite types:
+- `Records {}` (a mapping from field names to values, like the ones used in the example above)
+- `List []` (a collection of elements of the same type)
+- `Optional` (indicating the possibility that there might not be a value)
+- `Unions <>` (representing an enum of different alternatives)
 
-`json-to-dhall ./Schema.dhall --file info.json`{{exec}}
-
-One thing to note is that if you supply the program with a schema and a JSON file that does not follow the schema, the program will produce an error. This means you are guaranteed to have a schema abiding input if the program completes. It also means you can catch schema errors in your JSON files, such as the ones in Step 1. You can see this by running
-
-`json-to-dhall ./Schema.dhall --file incorrect_info.json`{{exec}}
+With these types, a lot of common fields can be represented. Custom types can also be easily defined, such as `Entity` in the example above, expanding the usefulness of the system.

@@ -3,10 +3,11 @@ It is also possible to write functions in Dhall, this can make defining repetiti
 A function look something like the following:
 
 ```haskell
-funcName : Param1Type -> Param2Type -> ResultType
+let funcName : Param1Type -> Param2Type -> ResultType
     = \(param1: Param1Type) ->
       \(param2: Param2Type) ->
         ... func body ...
+in funcName
 ```
 
 Let us create a function which creates users, such as the ones found in `info.json`. But first, let's define what a user is explicitly. One suggestion can be found in `User.dhall`, which can be viewed by running
@@ -19,12 +20,13 @@ We have defined the name as `Text`, the # of PRs as `Natural` (since we can't ha
 ```haskell
 let Role = < Teacher | TA | Student >
 
-makeUser : Text -> Natural -> Role -> User
+let makeUser : Text -> Natural -> Role -> User
     = \(name : Text) ->
       \(pullRequestsMade : Natural) ->
       \(role : Role) ->
         -- A user is a record of a name, # of PRs, and a role
         { name, pullRequestsMade, role }
+in makeUser
 ```
 
 We can now use the function to create a Dhall file which represents the same content as `info.json`, but as a Dhall file.  A template has been given for this purpose in `info.dhall`, with the same errors as in Step 1. Since we have static typing in Dhall, any statement which doesn't correspond to the given type will fail the type checking and throw an error. Thus you can run the following command and fix the entries until it prints the wanted output.
