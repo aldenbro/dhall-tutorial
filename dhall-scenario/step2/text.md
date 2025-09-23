@@ -1,34 +1,49 @@
-You probably found it somewhat tedious to fix the mistakes in the JSON file, and it would have been even worse if you didn't know where to look.
+# Introduction to Dhall
+You probably found it somewhat tedious to fix the mistakes in the JSON file. But think how bad it would have been if you didn't know what was wrong with the file to begin with.
 
-Dhall is supposed to be a better way to write configuration files, alleviating some of the issues you encountered in the previous step.
+Dhall is here to help you!
+Dhall is a programmable configuration language that is meant to be used to generate configuration files.
+Although Dhall has a similar syntax to JSON, it introduces types and functions.
+This makes it more ergonomic and precise.
 
-This is how a small Dhall file looks like, without using any fancy features:
+When using Dhall without all its bells and whistles, it looks quite similar to JSON. To showcase the similarities, here is a Dhall file specifying a simple record:
 
 ```haskell
 { age = 42, name = "Bob", weight = 13.37 }
 ```
 
-It is pretty similar to how a corresponding JSON file would look like.
+## Type safety
 
-However, how the Dhall file looks like is not that important, as it does not highlight the strengths of the language, which presents itself as other features.
+Dhall is a statically typed language.
+This implies type safety, meaning that we cannot assign a value to a variable that conflicts with that type.
 
-## Typing
-
-Dhall is a typed language, which means you can specify the structure of a given record as a type, and any record given that type will be forced to abide by it.
-
-For the aforementioned example, this would look something like the following:
+Using types with the aforementioned example, it can look like this:
 
 ```haskell
-let Entity = { age : Natural, name : Text, weight : Double }
+dhall <<< '
+    let Entity = { age : Natural, name : Text, weight : Double }
+    in  { age = 42, name = "Bob", weight = 13.37 } : Entity
+'
+```{{execute}}
 
-in  { age = 42, name = "Bob", weight = 13.37 } : Entity
-```
+If you would have given a negative number as the age, or an integer as the weight, Dhall would complain when you try to evaluate the expression.
 
-If you would have given a negative number as the age, or an integer as the weight, Dhall would complain when you would try to evaluate the expression. This helps catch simple mistakes, such as the ones found in Step 1, without looking for them manually. In this aspect Dhall is a much more safe language to use for your configuration files.
+You can see it for yourself if you run the following:
 
-Dhall has a couple of primitive types which can be used, these are:
+```haskell
+dhall <<< '
+    let Entity = { age : Natural, name : Text, weight : Double }
+    in  { age = -42, name = "Bob", weight = 13.37 } : Entity
+'
+```{{execute}}
+
+This helps catch simple mistakes, such as the ones found in the JSON file of Step 1, without looking for them manually.
+
+## Types
+
+Dhall has a couple of primitive types which can be used. These are:
 - `Bool`
-- `Natural` (a non-negative number)
+- `Natural`: A non-negative number.
 - `Integer`
 - `Double`
 - `Text`
@@ -36,9 +51,13 @@ Dhall has a couple of primitive types which can be used, these are:
 - `Bytes`
 
 Beyond that, Dhall also has some built-in composite types:
-- `Records {}` (a mapping from field names to values, like the ones used in the example above)
-- `List []` (a collection of elements of the same type)
-- `Optional` (indicating the possibility that there might not be a value)
-- `Unions <>` (representing an enum of different alternatives)
+- `Records {}`: A mapping from field names to values, like the ones used in the example above.
+- `List []`: A collection of elements of the same type.
+- `Optional`: Represent a value, or the absence of one.
+- `Unions <>`: Representing an enum of different alternatives.
 
 With these types, a lot of common fields can be represented. Custom types can also be easily defined, such as `Entity` in the example above, expanding the usefulness of the system.
+
+### Verification
+
+There is no verification for this step.
