@@ -6,7 +6,7 @@
   },
   {
     "name": "Eric",
-    "pullRequestsMade": 4,
+    "pullRequestsMade": -4,
     "role": "TA"
   },
   {
@@ -22,6 +22,6 @@
   {
     "name": "Herdi",
     "pullRequestsMade": 1,
-    "role": "Student"
+    "role": "Janitor"
   }
 ]
