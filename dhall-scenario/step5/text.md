@@ -5,10 +5,11 @@ Now we've covered how to generate configuration files from dhall files, using ou
 However, we can also go the other way!
 Given a JSON file, we may use `json-to-dhall` to go from JSON to Dhall.
 Go ahead and try that with our given `info.json` and see what happens:
+
 ```
-json-to-dhall --file info.json --output info.dhall
-batcat -l haskell info.dhall
+json-to-dhall --file alt_info.json | batcat -l haskell
 ```{{execute}}
+
 If you're observant you may find some problems with this configuration.
 How come Herdi has become a janitor, and why has Eric performed a negative amount of pull requests?
 Isn't this supposed to be caught by Dhall? How do we fix this?
@@ -26,9 +27,11 @@ batcat -l haskell Schema.dhall
 It specifies a list of users like before.
 Importantly, take note that we only allow natural numbers (positive or zero) and a set amount of roles.
 Now, let us apply this to our transformation from JSON to Dhall:
+
 ```
-json-to-dhall ./Schema.dhall --file info.json --output info.dhall
+json-to-dhall ./Schema.dhall --file alt_info.json --output alt_info.dhall
 ```{{execute}}
+
 Since the `info.json` was incorrect, as noted before, we get errors.
 This happens due to the values violating the schema and its types.
 Now, go ahead and fix any errors that pop up.
@@ -37,9 +40,11 @@ Note that you may need to run it again after the first fix to find all errors!
 # Configuration equivalence
 In this alternate timeline where Dhall was not used, `info.yaml` was written by hand!
 Take a look:
+
 ```
 batcat info.yaml
 ```{{execute}}
+
 Is this correct?
 Yes, it is, but the records are in a different order.
 So how do we compare the JSON and YAML?
@@ -49,11 +54,13 @@ Recall that Dhall wants us to specify the **single source of truth**.
 We want to compare two configuration files of different format, JSON and YAML, to see if they contain the same information.
 To do this, we can convert both to Dhall, to get them in the same format.
 Then, we simply compare the two:
+
 ```
-json-to-dhall ./Schema.dhall --file info.json --output info_json.dhall
+json-to-dhall ./Schema.dhall --file alt_info.json --output info_json.dhall
 yaml-to-dhall ./Schema.dhall --file info.yaml --output info_yaml.dhall
 diff info_json.dhall info_yaml.dhall
 ```{{execute}}
+
 For those unfamiliar with `diff`, no output means that the files are equivalent!
 Therefore, we have confirmed that the yaml file is equal to the JSON file, and is therefore correct!
 
@@ -62,5 +69,5 @@ This ignores any syntactic differences, like the records being out of order.
 This further solidifies the claim that a Dhall file is supposed to be used as the source for all configurations!
 
 ### Verification
-The verification will make sure that a `info.dhall` exists, and that `info_json.dhall` and `info_yaml.dhall` exist.
-It will also make sure that there are no errors in `info.json`.
+The verification will make sure that a `alt_info.dhall` exists, and that `info_json.dhall` and `info_yaml.dhall` exist.
+It will also make sure that there are no errors in `alt_info.json`.

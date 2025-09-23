@@ -10,7 +10,6 @@ curl -L "$GITHUB_URL" -o "$TMP_EXPECTED"
 
 if ! json-to-dhall --version >/dev/null 2>&1
 then
-    echo "json-to-dhall not found"
     exit 1
 fi
 
