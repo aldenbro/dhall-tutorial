@@ -38,11 +38,11 @@ Now, go ahead and fix any errors that pop up.
 Note that you may need to run it again after the first fix to find all errors!
 
 # Configuration equivalence
-In this alternate timeline where Dhall was not used, `info.yaml` was written by hand!
+In this alternate timeline where Dhall was not used, `alt_info.yaml` was written by hand!
 Take a look:
 
 ```
-batcat info.yaml
+batcat alt_info.yaml
 ```{{execute}}
 
 Is this correct?
@@ -57,7 +57,7 @@ Then, we simply compare the two:
 
 ```
 json-to-dhall ./Schema.dhall --file alt_info.json --output info_json.dhall
-yaml-to-dhall ./Schema.dhall --file info.yaml --output info_yaml.dhall
+yaml-to-dhall ./Schema.dhall --file alt_info.yaml --output info_yaml.dhall
 diff info_json.dhall info_yaml.dhall
 ```{{execute}}
 
