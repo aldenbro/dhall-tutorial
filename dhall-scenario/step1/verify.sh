@@ -8,6 +8,11 @@ TMP_EXPECTED="$(mktemp)"
 
 curl -L "$GITHUB_URL" -o "$TMP_EXPECTED"
 
+if ! json-to-dhall --version >/dev/null 2>&1
+then
+    exit 1
+fi
+
 if diff -q <(json-to-dhall --file "$LOCAL_FILE") <(json-to-dhall --file "$TMP_EXPECTED") >/dev/null; then
     rm -f "$TMP_EXPECTED"
     exit 0
