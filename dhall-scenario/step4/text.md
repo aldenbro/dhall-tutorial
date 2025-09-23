@@ -6,6 +6,11 @@ This is meant to be referenced everywhere the data is needed for configuration f
 It helps combat *configuration drift*, which happens when configurations built from a standard template starts to diverge over time.
 This will be demonstrated further in the next example.
 
+<details>
+    <summary>Spoiler</summary>
+    hello
+</details>
+
 ## Migrating to YAML
 As it turns out, the DevOps course is getting overhauled!
 Instead of keeping track of all users using a JSON configuration file, we want to move to YAML!
@@ -31,15 +36,32 @@ Herdi,1,Student
 ```{{}}
 
 A code skeleton is prepared at `csv.dhall`.
-You just need to fill in two places to make it work:
+You just need to fill in two places to make it work.
+To help you with this task, on any error you may pass in the flag `--explain` to the interpreter to get more details:
 
 1. The first row describing our columns
+<details>
+    <summary>Hint 1</summary>
+    This will be the names of each fields, separated by commas
+</details>
+<details>
+    <summary>Answer</summary>
+    name,pullRequestsMade,role
+</details>
 2. How each `User` is outputted
-
-Go do that now:
-```
-vim csv.dhall
-```{{exec}}
+<details>
+    <summary>Hint 1</summary>
+    To insert a variable in a string, you do `"${<variable>}`
+</details>
+<details>
+    <summary>Hint 2</summary>
+    `Natural` becomes a string by calling `Natural/show` on it.
+    `Role` becomes a string by calling `showConstructor` on it.
+</details>
+<details>
+    <summary>Answer</summary>
+    ${user.name},${Natural/show user.pullRequestsMade},${showConstructor user.role}
+</details>
 
 When you think your solution is correct, use the dhall interpreter and output it to a new file called `users.csv` like this:
 ```

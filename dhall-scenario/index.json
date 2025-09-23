@@ -4,9 +4,14 @@
   "details": {
     "intro": {
       "text": "intro.md",
+      "foreground": "foreground.sh",
       "background": "setup.sh"
     },
     "steps": [
+      {
+        "title": "Introduction",
+        "text": "intro/text.md"
+      },
       {
         "title": "Gaining a perspective on configuration languages",
         "text": "step1/text.md",

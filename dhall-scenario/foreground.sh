@@ -1,0 +1,3 @@
+echo Setting up Dhall scenario...
+while [ ! -f /tmp/setup0 ]; do sleep 1; done
+echo Setup complete.
