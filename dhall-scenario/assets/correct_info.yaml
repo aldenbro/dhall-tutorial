@@ -1,16 +1,15 @@
-
 - name: Larissa
-  role: Teacher
   pullRequestsMade: 5
+  role: Teacher
 - name: Eric
-  role: TA
   pullRequestsMade: 4
-- name: Sofia
   role: TA
+- name: Sofia
   pullRequestsMade: 3
+  role: TA
 - name: David
-  role: Student
   pullRequestsMade: 2
-- name: Herdi
   role: Student
+- name: Herdi
   pullRequestsMade: 1
+  role: Student
