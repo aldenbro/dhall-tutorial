@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+cd /root
+wget https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads/main/dhall-scenario/assets/easter.sh
+chmod +x /root/easter.sh
+
 apt-get update -y
 
 apt-get install -y bat
