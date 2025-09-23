@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Larissa",
+    "pullRequestsMade": 5,
+    "role": "Teacher"
+  },
+  {
+    "name": "Eric",
+    "pullRequestsMade": 4,
+    "role": "TA"
+  },
+  {
+    "name": "Sofia",
+    "pullRequestsMade": 3,
+    "role": "TA"
+  },
+  {
+    "name": "David",
+    "pullRequestsMade": 2,
+    "role": "Student"
+  },
+  {
+    "name": "Herdi",
+    "pullRequestsMade": 1,
+    "role": "Student"
+  }
+]

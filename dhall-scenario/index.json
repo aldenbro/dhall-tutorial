@@ -22,6 +22,18 @@
         "text": "step3/text.md",
         "verify": "step3/verify.sh",
         "background": "step3/background.sh"
+      },
+      {
+        "title": "Configuration Migration",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh",
+        "background": "step4/background.sh"
+      },
+      {
+        "title": "Translating back to Dhall",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh",
+        "background": "step5/background.sh"
       }
     ],
     "finish": {
