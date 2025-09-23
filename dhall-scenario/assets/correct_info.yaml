@@ -1,0 +1,16 @@
+
+- name: Larissa
+  role: Teacher
+  pullRequestsMade: 5
+- name: Eric
+  role: TA
+  pullRequestsMade: 4
+- name: Sofia
+  role: TA
+  pullRequestsMade: 3
+- name: David
+  role: Student
+  pullRequestsMade: 2
+- name: Herdi
+  role: Student
+  pullRequestsMade: 1
