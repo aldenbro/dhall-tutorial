@@ -1,7 +1,5 @@
 ## Agenda
 
-![A figure describing how Dhall can be used as a single truth](../assets/dhall.svg)
-
 The goal of this tutorial is to learn about a programmable configuration language called Dhall.
 
 To do this, we start by introducing configuration languages in general, with a hands-on example using JSON.
