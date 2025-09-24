@@ -5,7 +5,6 @@ Some easily recognizable examples are JSON, YAML, TOML, INI, etc.
 A crucial part of DevOps is to both setup a system and maintain it.
 In both of these stages, configuration files can be used to manage third-party packages, testing, specifying version control tools etc.
 
-
 However, with the growth and complexity of many projects, using plain configuration languages like JSON can lead to issues such as duplication and files growing to thousands of lines.
 Furthermore, these languages lack the safety features of many programming languages, such as type safety (ignoring Javascript).
 Dhall aims to alleviate these issues.
