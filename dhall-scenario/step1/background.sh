@@ -4,4 +4,4 @@ GITHUB_URL="https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads
 
 cd /root
 
-wget "$GITHUB_URL"
+wget -nc "$GITHUB_URL"
