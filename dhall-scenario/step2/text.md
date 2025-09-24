@@ -1,15 +1,14 @@
-# Introduction to Dhall
 You probably found it somewhat tedious to fix the mistakes in the JSON file. But think how bad it would have been if you didn't know what was wrong with the file to begin with.
 
 Dhall is here to help you!
 Dhall is a programmable configuration language that is meant to be used to generate configuration files.
-Although Dhall has a similar syntax to JSON, it introduces types and functions.
+In contrast to plain configuration languages, it introduces types and functions.
 This makes it more ergonomic and precise.
 
 When using Dhall without all its bells and whistles, it looks quite similar to JSON. To showcase the similarities, here is a Dhall file specifying a simple record:
 
 ```haskell
-{ age = 42, name = "Bob", weight = 13.37 }
+{ age = 42, name = "Bob", weight = 133.7 }
 ```
 
 ## Type safety
@@ -22,7 +21,7 @@ Using types with the aforementioned example, it can look like this:
 ```haskell
 dhall <<< '
     let Entity = { age : Natural, name : Text, weight : Double }
-    in  { age = 42, name = "Bob", weight = 13.37 } : Entity
+    in  { age = 42, name = "Bob", weight = 133.7 } : Entity
 '
 ```{{execute}}
 
@@ -33,7 +32,7 @@ You can see it for yourself if you run the following:
 ```haskell
 dhall <<< '
     let Entity = { age : Natural, name : Text, weight : Double }
-    in  { age = -42, name = "Bob", weight = 13.37 } : Entity
+    in  { age = -42, name = "Bob", weight = 133 } : Entity
 '
 ```{{execute}}
 
@@ -56,7 +55,7 @@ Beyond that, Dhall also has some built-in composite types:
 - `Optional`: Represent a value, or the absence of one.
 - `Unions <>`: Representing an enum of different alternatives.
 
-With these types, a lot of common fields can be represented. Custom types can also be easily defined, such as `Entity` in the example above, expanding the usefulness of the system.
+With these types, a lot of common fields can be represented. Custom types can also be easily defined, such as `Entity` in the example above, expanding the usefulness of the type system.
 
 ### Verification
 

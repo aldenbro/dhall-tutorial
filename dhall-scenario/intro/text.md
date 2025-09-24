@@ -8,7 +8,7 @@ We follow up by going deeper into the language by introducing functions.
 
 Then, we rewrite the JSON example using Dhall, to showcase the benefits over JSON and non-typed configuration languages in general.
 
-Finally, we introduce tools that let us convert from Dhall to other configuration languages such as JSON, YAML and CSV.
+Finally, we introduce tools that let us convert from Dhall to other configuration languages such as JSON or YAML, or to other data formats such as CSV.
 We also show tools that let us convert from other configuration languages to Dhall, and motivate why we'd want to do this.
 
 ## Intended Learning Outcomes

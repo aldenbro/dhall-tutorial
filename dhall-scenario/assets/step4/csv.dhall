@@ -17,8 +17,8 @@ let toCSV: List User -> Text =
   -- TODO: Define the column names here
   let columnNames: Text = "<COLUMNS HERE>"
   let formatRow: User -> Text =
-    -- TODO: Define how user attributes should be printed.
-    \(user: User) -> "<FORMATTED USER HERE>\n"
+    -- TODO: Define how user fields should be printed.
+    \(user: User) -> "<FORMATTED USER HERE>" ++ "\n"
   in
   \(users: List User) ->
     columnNames ++ "\n" ++

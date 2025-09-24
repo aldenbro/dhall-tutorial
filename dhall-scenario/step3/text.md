@@ -1,5 +1,3 @@
-# Dhall as a programming language
-
 ## Functions in Dhall
 It is also possible to write functions in Dhall. 
 This can make defining repetitive structures like the ones found in Step 1's JSON file much easier.
@@ -36,7 +34,7 @@ let makeUser : Text -> Natural -> Role -> User
 in makeUser
 ```
 
-We can now use the function to create a Dhall file which represents the same content as `info.json`.
+Now we use the function to create a Dhall file which represents the same content as `info.json`.
 A template has been given for this purpose in `info.dhall`, with the same errors as in Step 1. You can view the template by running:
 
 `batcat -l haskell info.dhall`{{exec}}
@@ -45,6 +43,8 @@ Since we have static typing in Dhall, any statement which doesn't correspond to 
 Thus you can run the following command and fix the entries until it prints the wanted output.
 
 `dhall --file ./info.dhall`{{exec}}
+
+> NOTE: If you are using the built-in editor, you can get syntax highlighting for Dhall by downloading the extension "Dhall Language Support".
 
 To remember the correct values you can look back at your corrected JSON file from Step 1:
 
@@ -67,7 +67,7 @@ dhall <<< '
 
 In this example, we used two builtin functions: `Natural/show` and `showConstructor`.
 These two were used to convert the values from their type into text.
-Remember these two, as they might come handy later!
+Remember these two, as they might come in handy later!
 
 ## A single source of truth
 

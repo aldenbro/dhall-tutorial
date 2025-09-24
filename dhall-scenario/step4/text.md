@@ -1,4 +1,4 @@
-# Configuration drift
+## Configuration drift
 Don't repeat yourself.
 This is one of the main selling points of Dhall.
 By creating a Dhall file to generate configurations, we have created a **single source of truth**, as mentioned previously.
@@ -20,7 +20,7 @@ See, that was pretty easy!
 ## Migrating to CSV
 But what if we add another tool that wants data in a CSV-format?
 Now, `dhall-to-csv` exists.
-However, what if we didn't have it? (We haven't downloaded it for you)
+However, what if we didn't have it? (We haven't downloaded it for you.)
 We want to let you write your own CSV formatter, to demonstrate the programming aspect of Dhall.
 
 For those that need a quick refresher on CSV formatting, here we have an example of a user in a CSV file:
@@ -30,7 +30,12 @@ name,pullRequestsMade,role
 Herdi,1,Student
 ```{{}}
 
-A code skeleton is prepared at `csv.dhall`.
+A code skeleton is prepared at `csv.dhall`, which you can view by running:
+
+```
+batcat -l haskell csv.dhall
+```{{exec}}
+
 You just need to fill in two places to make it work.
 To help you with this task, on any error you may pass in the flag `--explain` to the interpreter to get more details. 
 This is what is you need to change:
@@ -38,7 +43,7 @@ This is what is you need to change:
 1. The first row describing our columns
     <details>
         <summary>Hint 1</summary>
-        This will be the names of each fields, separated by commas.
+        This will be the names of each field, separated by commas.
     </details>
     <details>
         <summary>Answer</summary>

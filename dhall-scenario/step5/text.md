@@ -1,5 +1,3 @@
-# Translating back-and-forth
-
 ## `dhall-to-json` and `json-to-dhall`
 Now we've covered how to generate configuration files from dhall files, using our own custom format and set formats with `dhall-to-json` and `dhall-to-yaml`.
 However, we can also go the other way!
@@ -36,8 +34,17 @@ json-to-dhall ./Schema.dhall --file alt_info.json --output alt_info.dhall
 
 Since `alt_info.json` was incorrect we get errors.
 This happens due to the values violating the schema.
-Now, go ahead and fix any errors that pop up, be sure to use the correct values presented in earlier steps.
-Note that you may need to run it again after the first fix to find all errors!
+Now, go ahead and fix any errors that pop up, be sure to use the correct values presented in earlier steps. Remember you can find the correct values by looking at the previous JSON file you corrected:
+
+```
+batcat info.json
+```{{execute}}
+
+Note that you may need to run it again after the first fix to find all errors! If no output is printed, it means the program ran successfully and created the file `alt_info.dhall`, which can be viewed by running:
+
+```
+batcat -l haskell alt_info.dhall
+```{{execute}}
 
 ## Configuration equivalence
 Dhall also allows us to compare the content of different configuration file formats.
@@ -51,8 +58,8 @@ Is this equivalent to the content of `alt_info.json`?
 Yes, it is, but the fields of the record are listed in a different order.
 So how do we compare the JSON and YAML?
 
-Recall that Dhall wants us to specify the **single source of truth**. 
-We want to compare two configuration files of different format, JSON and YAML, to see if they contain the same information.
+Recall that Dhall is used to specify a **single source of truth**. 
+We want to compare two configuration files of different formats, JSON and YAML, to see if they contain the same information.
 To do this, we can convert both to Dhall, to get them in the same format.
 Then, we simply compare the two:
 
@@ -64,7 +71,7 @@ diff info_json.dhall info_yaml.dhall
 
 For those unfamiliar with `diff`, if there is no output that means the files are equivalent!
 
-When converting to Dhall, we get the configuration file the its normal form.
+When converting to Dhall, we get the configuration file in its normal form.
 This ignores slight syntactic differences, like the record fields being out of order.
 This further solidifies the claim that a Dhall file is supposed to be used as the source for all configurations!
 

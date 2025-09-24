@@ -13,29 +13,29 @@
         "text": "intro/text.md"
       },
       {
-        "title": "Gaining a perspective on configuration languages",
+        "title": "Configuration languages",
         "text": "step1/text.md",
         "verify": "step1/verify.sh",
         "background": "step1/background.sh"
       },
       {
-        "title": "Introducing Dhall and types",
+        "title": "Introduction to Dhall",
         "text": "step2/text.md"
       },
       {
-        "title": "Functions in Dhall",
+        "title": "Dhall as a programming language",
         "text": "step3/text.md",
         "verify": "step3/verify.sh",
         "background": "step3/background.sh"
       },
       {
-        "title": "Configuration Migration",
+        "title": "Configuration migration",
         "text": "step4/text.md",
         "verify": "step4/verify.sh",
         "background": "step4/background.sh"
       },
       {
-        "title": "Translating back to Dhall",
+        "title": "Translating back-and-forth",
         "text": "step5/text.md",
         "verify": "step5/verify.sh",
         "background": "step5/background.sh"

@@ -1,4 +1,3 @@
-# Configuration Languages
 A configuration file is meant to be a human readable and easily parsable document which contains information about the state of a system. These are written with different languages tailored for this.
 Some easily recognizable examples are JSON, YAML, TOML, INI, etc.
 
