@@ -61,7 +61,7 @@ This is what is you need to change:
     </details>
     <details>
         <summary>Answer</summary>
-        <code>{user.name},${Natural/show user.pullRequestsMade},${showConstructor user.role}</code>
+        <code>${user.name},${Natural/show user.pullRequestsMade},${showConstructor user.role}</code>
     </details>
 
 When you think your solution is correct, use the dhall interpreter to check the output:
