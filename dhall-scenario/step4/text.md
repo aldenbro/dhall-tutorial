@@ -70,9 +70,9 @@ When you think your solution is correct, use the dhall interpreter to check the 
 dhall text --file csv.dhall | batcat -l csv
 ```{{exec}}
 
-By using the `text`{{}} option for Dhall, we are telling the interpreter to output plain text, which allows us to print this without any Dhall langauge expressions.
+By using the `text`{{}} option for Dhall, we are telling the interpreter to output plain text, which allows us to print this without any Dhall language expressions.
 
-The notion of **single source of truth** has now becomes more realized as we have learnt how it is possible to convert from Dhall to multiple different formats.
+The notion of a **single source of truth** has now become more realized as we have learnt how it is possible to convert from Dhall to multiple different formats.
 
 ![A figure describing how Dhall can be converted to multiple different formats](https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads/main/dhall-scenario/assets/dhall2.svg)
 
