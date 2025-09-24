@@ -18,7 +18,7 @@ dhall-to-yaml --file info.dhall | batcat -l yaml
 See, that was pretty easy!
 
 ## Migrating to CSV
-But what if we add another tool that wants the configuration in a CSV-format?
+But what if we add another tool that wants data in a CSV-format?
 Now, `dhall-to-csv` exists.
 However, what if we didn't have it? (We haven't downloaded it for you)
 We want to let you write your own CSV formatter, to demonstrate the programming aspect of Dhall.
@@ -66,6 +66,10 @@ dhall text --file csv.dhall | batcat -l csv
 ```{{exec}}
 
 By using the `text`{{}} option for Dhall, we are telling the interpreter to output plain text, which allows us to print this without any Dhall langauge expressions.
+
+The notion of **single source of truth** has now becomes more realized as we have learnt how it is possible to convert from Dhall to multiple different formats.
+
+![A figure describing how Dhall can be converted to multiple different formats](https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads/main/dhall-scenario/assets/dhall2.svg)
 
 ### Verification
 

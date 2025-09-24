@@ -16,10 +16,8 @@ let userInfo = ./info.dhall
 let toCSV: List User -> Text = 
   -- TODO: Define the column names here
   let columnNames: Text = "<COLUMNS HERE>"
-  -- TODO: Define how user attributes should be printed.
-  -- Remember to call `showConstructor` on the roles for them
-  -- to become `Text`.
   let formatRow: User -> Text =
+    -- TODO: Define how user attributes should be printed.
     \(user: User) -> "<FORMATTED USER HERE>\n"
   in
   \(users: List User) ->

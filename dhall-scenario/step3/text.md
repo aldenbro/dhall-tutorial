@@ -50,11 +50,32 @@ To remember the correct values you can look back at your corrected JSON file fro
 
 `batcat info.json`{{exec}}
 
+## Built-in functions
+Dhall also has a standard library, defined in its [Prelude](https://store.dhall-lang.org/Prelude-v23.1.0/).
+Many of the prelude functions are available by default to use.
+To showcase this, we define a `Human` type below.
+Run the code and look at the output.
+
+```
+dhall <<< '
+  let Status = < Alive | Dead >
+  let Human = {age: Natural, status: Status}
+  let herdi = {age = 23, status = Status.Dead}
+  in "Age: ${Natural/show herdi.age}, Status: ${showConstructor herdi.status}"
+  '
+```{{exec}}
+
+In this example, we used two builtin functions: `Natural/show` and `showConstructor`.
+These two were used to convert the values from their type into text.
+Remember these two, as they might come handy later!
+
 ## A single source of truth
 
 This is all well and good, we can create configuration files that have some kind of static check to ensure type correctness.
 But the systems you use might not support Dhall. 
 It might only support the aforementioned JSON.
+
+![A figure describing how Dhall can be transformed into JSON](https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads/main/dhall-scenario/assets/dhall1.svg)
 
 However, Dhall comes with a tool that can be used to translate from Dhall to JSON.
 Thus we can have type safety in our JSON files, by outsourcing their generation to Dhall.

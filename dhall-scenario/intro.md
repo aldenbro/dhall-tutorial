@@ -1,4 +1,4 @@
-Please wait for the environment to finish setting up. Please enjoy this GIF while you wait:
+Please wait for the environment to finish setting up. Enjoy this GIF while you wait:
 
 ![A dancing hedgehog](https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads/main/dhall-scenario/assets/hog.gif)
 

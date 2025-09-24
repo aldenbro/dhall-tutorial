@@ -64,9 +64,11 @@ diff info_json.dhall info_yaml.dhall
 
 For those unfamiliar with `diff`, if there is no output that means the files are equivalent!
 
-When convert to Dhall, we get the configuration file the its "canonical" normal form.
-This ignores any syntactic differences, like the record fields being out of order.
+When converting to Dhall, we get the configuration file the its normal form.
+This ignores slight syntactic differences, like the record fields being out of order.
 This further solidifies the claim that a Dhall file is supposed to be used as the source for all configurations!
+
+![A figure showing how Dhall can be a single source of truth](https://raw.githubusercontent.com/aldenbro/dhall-tutorial/refs/heads/main/dhall-scenario/assets/dhall3.svg)
 
 ### Verification
 
